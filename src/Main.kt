@@ -17,5 +17,14 @@ fun printGenero(genero: String) {
 
 fun main() {
     saludar("","Jonathan")
+    //Hola Jonathan
+
+    saludar("Buenas noches","Jonathan Enzo")
+    //Buenas noches Jonathan Enzo
+
     printGenero("Helicoptero Apache H-64 de combate F22 raptor")
+    //Mi genero es: Helicoptero Apache H-64 de combate F22 raptor
+
+    printGenero("Masculino")
+    //Mi genero es: Masculino
 }
