@@ -1,30 +1,51 @@
-
-fun saludar(saludo: String, nombreCompleto: String) {
-    var mensajeDefault: String = "Hola"
-
-    if(saludo.isBlank()) {
-        print(mensajeDefault)
-    } else {
-        print(saludo)
-    }
-    return println(" $nombreCompleto")
-}
-
-fun printGenero(genero: String) {
-    println("Mi genero es: $genero")
-}
-
+import com.sun.jdi.IntegerType
 
 fun main() {
-    saludar("","Jonathan")
-    //Hola Jonathan
+    val persona1 = Persona("Jonathan Enzo", "Rocha Contreras", 9, 74, 1.72, "Masculino")
+    persona1.saludar("", "ev")
+    persona1.presentacion()
+    persona1.printGenero()
 
-    saludar("Buenas noches","Jonathan Enzo")
-    //Buenas noches Jonathan Enzo
+}
 
-    printGenero("Helicoptero Apache H-64 de combate F22 raptor")
-    //Mi genero es: Helicoptero Apache H-64 de combate F22 raptor
+data class Persona(private val nombre: String, private val apellido: String, private val edad: Int, private val peso: Int, private val altura: Double, private val genero: String ){
+    fun saludar(saludo: String, nombreCompleto: String) {
+        var mensajeDefault: String = "Hola "
 
-    printGenero("Masculino")
-    //Mi genero es: Masculino
+        if(saludo.isBlank()) {
+            print("$nombre dice: $mensajeDefault")
+        } else {
+            print(saludo)
+        }
+        return println(nombreCompleto)
+    }
+
+    private fun esPrimo(): String{
+        if(edad <= 1){
+            return "tu edad no es un numero primo"
+        }
+        if(edad == 2){
+            return "tu edad es un numero primo"
+        }
+        if(edad % 2 == 0){
+            return "tu edad no es un numero primo"
+        }
+        var i: Int = 3
+        while(i * i <= edad){
+            if(edad % i == 0){
+                return "tu edad no es un numero primo"
+            }
+            i += 2
+        }
+        return "tu edad es un numero primo"
+
+    }
+
+    fun presentacion(){
+        println("Hola soy $nombre $apellido \n Tu peso es: $peso kg \n Tu altura es: $altura m \n Tienes: $edad años, ${esPrimo()} ")
+    }
+
+    fun printGenero() {
+        println("Mi genero es: $genero")
+    }
 }
