@@ -1,7 +1,7 @@
 import com.sun.jdi.IntegerType
 
 fun main() {
-    val persona1 = Persona("Jonathan Enzo", "Rocha Contreras", 9, 74, 1.72, "Masculino")
+    val persona1 = Persona("Jonathan Enzo", "Rocha Contreras", 20, 74, 1.72, "Masculino")
     persona1.saludar("", "ev")
     persona1.presentacion()
     persona1.printGenero()
